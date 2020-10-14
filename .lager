@@ -5,6 +5,5 @@ image = lagerdata/devenv-cortexm-stm32
 mount_dir = /github/workspace
 shell = /bin/bash
 cmd.build = headless-build.sh -build demo-nucleo-l053r8 -importAll /github/workspace
-cmd.clean-debug = rm -rf Debug
-cmd.clean = cd /github/workspace;rm -rf Debug;rm -rf Test;rm -rf Release
+cmd.clean = cd /github/workspace;rm -rf Release;rm -rf Debug;rm -rf Test
 
