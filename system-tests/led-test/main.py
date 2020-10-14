@@ -34,18 +34,18 @@ def device(gateway):
 def test_led_on(gateway, device, serial_port):
     device.run()
     serial_port.write(b'l')
+    time.sleep(0.1)
     data = serial_port.read(32)
-    #led_state = gateway.gpio.read(LED_PIN)
-    led_state = gateway.pi.read(6)
-    assert led_state == 0
+    led_state = gateway.gpio.read(LED_PIN)
+    assert led_state == 1
 
 def test_led_off(gateway, device, serial_port):
     device.run()
     serial_port.write(b'k')
+    time.sleep(0.1)
     data = serial_port.read(32)
-    #led_state = gateway.gpio.read(LED_PIN)
-    led_state = gateway.pi.read(6)
-    assert led_state == 1
+    led_state = gateway.gpio.read(LED_PIN)
+    assert led_state == 0
 
 if __name__ == '__main__':
     sys.exit(pytest.main([__file__]))
