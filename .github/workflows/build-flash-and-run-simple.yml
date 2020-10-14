@@ -13,8 +13,6 @@ jobs:
 
       - name: Build
         uses: docker://lagerdata/devenv-cortexm-stm32
-        volumes:
-          - /home/runner/work/demo-nucleo-l053r8/demo-nucleo-l053r8:/app
         with:
           entrypoint: /usr/local/bin/lager
           args: exec build
